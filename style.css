@@ -82,6 +82,12 @@ body {
     animation: slideDown 0.8s ease-out;
 }
 
+.nav-contacts {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -104,13 +110,14 @@ body {
 .nav-cta {
     background: white;
     color: var(--ember-red);
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
 }
 
 .nav-cta:hover {
@@ -159,10 +166,35 @@ body {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     color: white;
     max-width: 700px;
-    margin: 0 auto var(--space-lg);
+    margin: 0 auto var(--space-md);
     line-height: 1.6;
     opacity: 0.95;
     animation: fadeInUp 0.8s ease-out 0.8s backwards;
+}
+
+.offer-badge {
+    display: inline-block;
+    background: var(--warm-yellow);
+    color: var(--charcoal-black);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: var(--space-lg);
+    animation: fadeInUp 0.8s ease-out 1s backwards, pulse 2s ease-in-out infinite 2s;
+    box-shadow: 0 5px 20px rgba(255, 176, 32, 0.4);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 .cta-button {
@@ -322,6 +354,183 @@ body {
     font-size: 1rem;
     color: var(--smoke-gray);
     line-height: 1.5;
+}
+
+/* Pricing Section */
+.pricing {
+    padding: var(--space-xl) 0;
+    background: linear-gradient(135deg, var(--ceramic-white) 0%, var(--ash-light) 100%);
+}
+
+.offer-banner {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--ember-red), var(--flame-orange));
+    color: white;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-md);
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.price-card {
+    background: white;
+    padding: var(--space-lg);
+    border-radius: 20px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    border: 3px solid transparent;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    border-color: var(--flame-orange);
+}
+
+.price-card.featured {
+    border-color: var(--flame-orange);
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(255, 107, 53, 0.25);
+}
+
+.price-card.featured:hover {
+    transform: scale(1.08) translateY(-10px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--warm-yellow), var(--flame-orange));
+    color: var(--charcoal-black);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 3px 15px rgba(255, 176, 32, 0.4);
+}
+
+.price-header {
+    text-align: center;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--ash-light);
+}
+
+.price-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--charcoal-black);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.05em;
+}
+
+.price-icon {
+    font-size: 2.5rem;
+}
+
+.price-amount {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.currency {
+    font-size: 1.5rem;
+    color: var(--smoke-gray);
+    vertical-align: top;
+    margin-right: 0.25rem;
+}
+
+.amount {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--ember-red);
+    line-height: 1;
+}
+
+.price-features {
+    list-style: none;
+    margin-bottom: var(--space-lg);
+    padding: 0;
+}
+
+.price-features li {
+    padding: 0.75rem 0;
+    color: var(--smoke-gray);
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--ash-light);
+}
+
+.price-features li:last-child {
+    border-bottom: none;
+}
+
+.price-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.price-button {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--ember-red), var(--flame-orange));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+}
+
+.price-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 107, 53, 0.4);
+}
+
+.price-button.secondary {
+    background: linear-gradient(135deg, var(--charcoal-black), var(--smoke-gray));
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.price-button.secondary:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.delivery-note {
+    margin-top: var(--space-lg);
+    text-align: center;
+    background: white;
+    padding: var(--space-md);
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.delivery-note p {
+    font-size: 1.2rem;
+    color: var(--charcoal-black);
+    margin: 0;
+}
+
+.delivery-note strong {
+    color: var(--ember-red);
 }
 
 /* Features Section */
@@ -620,8 +829,23 @@ body {
         text-align: center;
     }
     
+    .nav-contacts {
+        justify-content: center;
+    }
+    
     .logo {
         font-size: 2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .cta-button {
+        width: 100%;
     }
 }
 
