@@ -1,3 +1,27 @@
+// Random WhatsApp number selector
+function orderJikokoa(size, price) {
+    // Array of WhatsApp numbers
+    const whatsappNumbers = ['254104440055', '254788847935'];
+    
+    // Randomly select one number
+    const randomNumber = whatsappNumbers[Math.floor(Math.random() * whatsappNumbers.length)];
+    
+    // Create appropriate message based on size
+    let message = '';
+    if (size === 'general') {
+        message = "Hi, I'm interested in ordering a Jikokoa stove";
+    } else {
+        const sizeCapitalized = size.charAt(0).toUpperCase() + size.slice(1);
+        message = `Hi, I want to order a ${sizeCapitalized} Size Jikokoa stove (KSh ${price})`;
+    }
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${randomNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+}
+
 // Scroll animations
 document.addEventListener('DOMContentLoaded', function() {
     

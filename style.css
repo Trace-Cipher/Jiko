@@ -118,6 +118,9 @@ body {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     white-space: nowrap;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
 }
 
 .nav-cta:hover {
@@ -213,6 +216,9 @@ body {
     animation: fadeInUp 0.8s ease-out 1s backwards;
     position: relative;
     overflow: hidden;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
 }
 
 .cta-button::before {
@@ -498,6 +504,9 @@ body {
     font-size: 1.1rem;
     transition: all 0.3s ease;
     box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
 }
 
 .price-button:hover {
